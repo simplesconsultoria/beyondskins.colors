@@ -25,6 +25,7 @@
 /* old fashion table layout */
 #main {
   display: table;
+  width: 100%;
 }
 #main-content,
 #column-one,
@@ -34,13 +35,13 @@
 }
 /* margin collumns */
 #main-content {
-  padding: 0;
+  padding: 2%;
 }
 #column-one {
-  padding-right: 2%;
+  padding: 2%;
 }
 #column-two {
-  padding-left: 2%;
+  padding: 2%;
 }
 #portal-column-content {
   width: 100%;
@@ -107,7 +108,6 @@ dl.portlet a:hover {
 }
 #main {
   background: #ffffff;
-  padding: 2em 1em;
 }
 #user {
   float: right;
@@ -150,11 +150,19 @@ header a:hover {
   max-height: 200px;
 }
 /* search */
-#search {
+#portal-searchbox {
   width: 45%;
   float: right;
   text-align: right;
   padding: 5em 2em 1em 0;
+  margin: 6em 2em 0 0;
+}
+#portal-searchbox input.searchField {
+  border: 1px solid #ccc;
+  padding: 0.5em 0.2em 0.5em 0.2em;
+}
+#portal-searchbox input.searchButton {
+  padding: 0.5em;
 }
 /* Navigation */
 nav {
