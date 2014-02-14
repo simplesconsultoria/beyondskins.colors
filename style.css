@@ -86,6 +86,7 @@ a:visited,
 #content a:link,
 dl.portlet a:link {
   color: #1a3c45;
+  border-bottom: none;
 }
 .state-published {
   color: #1a3c45 !important;
@@ -135,7 +136,7 @@ header a:hover {
 #logo {
   width: 40%;
   float: left;
-  padding: 2em;
+  padding: 1.5em 2em;
 }
 #logo a {
   font-family: 'Open Sans', sans-serif;
@@ -154,8 +155,7 @@ header a:hover {
   width: 45%;
   float: right;
   text-align: right;
-  padding: 5em 2em 1em 0;
-  margin: 6em 2em 0 0;
+  padding: 5em 3em 1em 0;
 }
 #portal-searchbox input.searchField {
   border: 1px solid #ccc;
@@ -255,13 +255,15 @@ h6 {
 h1 {
   color: #464646;
   border: none;
-  margin-bottom: 0;
+  margin-bottom: 0.6em;
   margin-top: 0;
   font-size: 2.5em;
   line-height: 1em;
 }
 h2 {
   color: #464646;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
 }
 #content .documentDescription,
 #content #description {
@@ -270,6 +272,31 @@ h2 {
   margin-bottom: 1em;
 }
 /********** Tiles **********/
+.tile img {
+  max-width: 100%;
+  height: auto;
+}
+/* galeria */
+.cover-carousel-tile {
+  margin-bottom: 2em;
+}
+.galleria-stage {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.galleria-info-text {
+  padding: 0;
+}
+.galleria-info-title {
+  font: bold 2em/1.1 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+.galleria-info-description {
+  font: normal 1em/1.4 arial, helvetica, sans-serif;
+  margin: 0;
+  color: #333333;
+}
 /*********** Portlets ***********/
 /* general styles */
 .portletHeader,
@@ -344,8 +371,9 @@ aside a {
 /********** Footer **********/
 footer {
   background: #ffffff;
-  padding: 2em;
+  padding: 2em 2em 0 2em;
   font-size: 80%;
+  border-top: 1px solid #ccc;
 }
 footer p {
   margin-bottom: 2em;

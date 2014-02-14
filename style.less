@@ -100,6 +100,7 @@ a:visited,
 #content a:link, 
 dl.portlet a:link {
 	color:@main-link;
+	border-bottom: none;
 }
 .state-published {
   color:@main-link !important;
@@ -159,7 +160,7 @@ header a:hover {
 #logo {
 	width: 40%;
 	float: left;
-	padding: 2em;
+	padding: 1.5em 2em;
 }
 #logo a {
 	font-family: @title-font;
@@ -180,8 +181,7 @@ header a:hover {
 	width: 45%;
 	float: right;
 	text-align: right;
-	padding: 5em 2em 1em 0;
-	margin: 6em 2em 0 0;
+	padding: 5em 3em 1em 0;
 }
 #portal-searchbox input.searchField {
 	border: 1px solid #ccc;
@@ -268,13 +268,15 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     color: @title-color;
     border: none;
-    margin-bottom: 0;
+    margin-bottom: 0.6em;
     margin-top: 0;
     font-size: 2.5em;
     line-height: 1em;
 }
 h2 {
-    color: @title-color;    
+    color: @title-color;
+    line-height: 1.2em;
+	margin-bottom: 0.5em;
 }
 #content .documentDescription, #content #description {
     color: lighten(@main-text, 10%); 
@@ -283,7 +285,32 @@ h2 {
 }
 
 /********** Tiles **********/
+.tile img {
+	max-width: 100%;
+	height: auto;
+}
 
+/* galeria */
+.cover-carousel-tile {
+	margin-bottom: 2em;
+}
+.galleria-stage {
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.galleria-info-text {
+	padding: 0;
+}
+.galleria-info-title {
+	font: bold 2em/1.1 @title-font;
+	font-weight: normal;
+}
+.galleria-info-description {
+	font: normal 1em/1.4 @text-font;
+	margin: 0;
+	color: @main-text;
+}
 
 /*********** Portlets ***********/
 
@@ -354,8 +381,9 @@ aside a {
 /********** Footer **********/
 footer {
 	background: @content-color;
-	padding: 2em;
+	padding: 2em 2em 0 2em;
     font-size: 80%;
+    border-top: 1px solid #ccc;
 }
 
 footer p {
