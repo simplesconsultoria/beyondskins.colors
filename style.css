@@ -20,7 +20,7 @@
   width: 20%;
 }
 #column-two {
-  width: 30%;
+  width: 20%;
 }
 /* old fashion table layout */
 #main {
@@ -119,7 +119,7 @@ dl.portlet a:hover {
 }
 /* area do topo */
 header {
-  background: #ffffff;
+  background: #464646;
   color: #cccccc;
   background: #fff;
   border-bottom: 1px solid #f1f1f1;
@@ -155,7 +155,7 @@ header a:hover {
   width: 45%;
   float: right;
   text-align: right;
-  padding: 5em 3em 1em 0;
+  padding: 3em 3em 1em 0;
 }
 #portal-searchbox input.searchField {
   border: 1px solid #ccc;
@@ -179,12 +179,16 @@ nav ul {
 }
 nav li {
   display: table-cell;
-  margin-left: 1px;
   height: 6em;
   vertical-align: bottom;
-  background: #ff0000;
+  background: #cccccc;
   border-right: 1px solid #ffffff;
   width: 100%;
+  position: relative;
+}
+nav li li {
+  height: auto;
+  border-right: none;
 }
 nav li a:link {
   font-size: 90%;
@@ -200,29 +204,103 @@ nav li a:link,
 nav li a:visited {
   color: #ffffff;
 }
-nav li a:hover {
-  color: #ffffff;
-}
-nav ul li:nth-child(1) {
+nav ul li:nth-child(1),
+nav ul li:nth-child(1) li {
   background: #464646;
 }
-nav ul li:nth-child(2) {
+nav ul li:nth-child(2),
+nav ul li:nth-child(2) li {
   background: #473f94;
 }
-nav ul li:nth-child(3) {
+nav ul li:nth-child(3),
+nav ul li:nth-child(3) li {
   background: #0291d5;
 }
-nav ul li:nth-child(4) {
+nav ul li:nth-child(4),
+nav ul li:nth-child(4) li {
   background: #83c420;
 }
-nav ul li:nth-child(5) {
+nav ul li:nth-child(5),
+nav ul li:nth-child(5) li {
   background: #f38003;
 }
-nav ul li:nth-child(6) {
+nav ul li:nth-child(6),
+nav ul li:nth-child(6) li {
   background: #d90013;
 }
-nav ul li:nth-child(7) {
+nav ul li:nth-child(7),
+nav ul li:nth-child(7) li {
   background: #d92e8c;
+}
+/* DropDown compatibility */
+nav ul.submenu a {
+  background: transparent;
+  color: #ffffff !important;
+}
+nav ul.submenu a:hover {
+  color: #000  !important;
+  background: #fff;
+  opacity: 0.5;
+}
+nav ul {
+  list-style-image: none;
+  position: relative;
+  /* fix ie */
+
+  zoom: 1;
+  /* fix ie */
+
+}
+nav ul:after {
+  content: "";
+  clear: both;
+  display: block;
+  visibility: hidden;
+}
+nav ul.submenu a {
+  display: block;
+  border: 1px solid #fff;
+}
+nav li:hover > ul.submenu {
+  display: block;
+}
+ul.submenu {
+  display: none;
+  left: -1px;
+  position: absolute;
+  top: 100%;
+  z-index: 2;
+  border: none;
+  width: 12em;
+  box-shadow: 0px 3px 5px #ccc;
+}
+nav ul li:hover > ul.submenu {
+  display: block;
+}
+ul.submenu li {
+  float: none;
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 12em;
+}
+nav ul ul.submenu li a {
+  padding: 0.7em 1.5em 0.7em 1em;
+}
+ul.submenu ul {
+  top: 0;
+  left: 100%;
+  right: auto;
+}
+nav li:nth-child(6) ul.submenu ul,
+nav li:nth-child(7) ul.submenu ul,
+nav li:nth-child(8) ul.submenu ul {
+  left: auto;
+  right: 100%;
+}
+ul.submenu a.state-published:hover,
+.selected ul.submenu .state-published {
+  color: #000 !important;
 }
 /********** Content **********/
 /* breadcrumb */
@@ -394,8 +472,21 @@ footer p {
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+  body {
+    background-image: none;
+  }
+  #wrapper {
+    width: 90%;
+  }
   #main {
     margin-top: 4em;
+    display: block;
+  }
+  div.cell {
+    float: none;
+    left: 100%;
+    width: 100% !important;
+    margin-left: -100% !important;
   }
   #logo {
     float: right;
@@ -409,9 +500,14 @@ footer p {
   #logo a img {
     margin-top: 5px;
     width: 2em;
+    height: auto;
+    top: 0;
+    position: absolute;
+  }
+  #portal-searchbox {
+    display: none;
   }
   #btnav {
-    background: transparent url(img/btmenu.jpg) no-repeat 0 0;
     width: 153px;
     height: 40px;
     display: block;
@@ -421,12 +517,20 @@ footer p {
   #btnav ul {
     display: none;
   }
+  ul.submenu {
+    display: none !important;
+  }
+  nav li {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
   div:hover#btnav ul {
     padding-top: 10px;
     display: block;
     top: 40px;
     position: absolute;
-    background: #ff0000;
+    background: #cccccc;
   }
   div:hover#btnav ul li a {
     padding: 10px;
@@ -435,6 +539,7 @@ footer p {
     display: block;
     font-size: 2em;
     padding-top: 10px;
+    color: #888;
   }
   header > div {
     width: 93%;
@@ -449,5 +554,16 @@ footer p {
 }
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  
+  #logo {
+    width: 70%;
+  }
+  div.cell {
+    float: none;
+    width: 100% !important;
+    margin-left: -100% !important;
+  }
+  footer {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
