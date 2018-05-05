@@ -1,0 +1,20 @@
+Changelog
+=========
+
+0.1dev (unreleased)
+-------------------
+
+- Added a simple Diazo theme package (Zip file) [macagua]
+
+- Added Plone theme package structure [macagua]
+
+- Adiciona icones que faltavam [agnogueira]
+
+- AJustes finais [agnogueira]
+
+- Styles for cover tiles [agnogueira]
+
+- Fix columns issues [agnogueira]
+
+- Initial upload [agnogueira]
+
